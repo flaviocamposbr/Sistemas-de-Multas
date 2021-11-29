@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran - Simulação</title>
+    <style>
+        body {
+            background-color: cadetblue;
+            color: rgb(255, 255, 255);
+            font: normal 15px Arial;
+        }
+        input#vel {
+            background-color: wheat;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <p1>Lembre-se sempre de respeitar as regras de trânsito, respeite o limite de 50km/h</p1> </br>
+    Coloque sua velocidade atual <input type="number" name="vel" id="vel">
+    <input type="button" value="Verificar" onclick = caucular()>
+    <div id = max></div>
+
+<script> 
+        function caucular(){
+            var km = document.getElementById('vel')
+            var km2 = document.querySelector('div#max')
+            var s = Number (km.value) // conversão de número
+            km2.innerHTML = 'Use sempre o cinto de segurança.'
+            if (s > 50) {
+                km2.innerHTML = `Você ultrapassou a velocidade máxima permitida, </br>
+                Você foi <strong>Multado</strong>`
+            }
+        }
+</script>
+</body>
+</html>
